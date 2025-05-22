@@ -108,7 +108,7 @@ app.post('/data', async (req, res) => {
 app.use(express.static(path.join(__dirname, 'build')));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'build', 'index.html')));
 
-const PORT = 8888;
+const PORT = 9100;
 initDB().then(() => {
   app.listen(PORT, () => {
     console.log(`서버 실행 중 http://localhost:${PORT}`);

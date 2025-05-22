@@ -16,7 +16,7 @@ function App() {
     let intervalId;
 
     const fetchData = () => {
-      fetch('http://localhost:8888/data')
+      fetch('http://localhost:9100/data')
         .then(res => res.json())
         .then(data => {
           setSensorData(data);
