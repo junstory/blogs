@@ -72,6 +72,7 @@ const initDB = async () => {
 };
 
 app.get('/data', async (req, res) => {
+  console.log('GET /data');
   try {
     const [rows] = await pool.query(
       'SELECT mq2, mq135, lm35dz, dm436, relay, created_at FROM sensor_data ORDER BY created_at DESC LIMIT 1'
@@ -87,6 +88,7 @@ app.get('/data', async (req, res) => {
 });
 
 app.post('/data', async (req, res) => {
+  console.log('POST /data', req.body);
   try {
     const { mq2, mq135, lm35dz, dm436, relay } = req.body;
 
